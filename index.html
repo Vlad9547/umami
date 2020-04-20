@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Umami</title>
+    <link rel="stylesheet" type="text/css" href="images/style.css">
+    <link rel="shortcut icon" href="favicon.jpg" type="images/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <script src="scripts/anime.js"></script>
+    <script src="scripts/lang.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        class food{
+            constructor(type,plate,foodname,composition,spicy,weight,price,img) {
+            this.type=type;
+            this.plate=plate;
+            this.foodname=foodname;
+            this.composition=composition;
+            this.spicy=spicy;
+            this.weight=weight;
+            this.price=price;
+            this.img=img;
+            }
+        }
+    //создаём объект - продукт где указываем(категорию цифрой(лапша, суп напитки и тд) учитывая номер категории в меню, номер тарелки (в слайдере) начиная с 1, имя продукта, описание, острота(от 1 до 5),вес,цена,путь к большой картинке(images/имя))
+    //обязателньо создать минимум 1 продукт для каждой категории
+        Lapsha1=new food('1','1','1Lapsha','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','1','300 грамм','130 грн','images/ImageHere.png');
+        Lapsha2=new food('1','2','2Lapsha','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','2','330 грамм','130 грн','images/ImageHere.png');
+        Lapsha3=new food('1','3','3Lapsha','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','3','340 грамм','130 грн','images/ImageHere.png');
+        Lapsha4=new food('1','4','4Lapsha','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','4','350 грамм','130 грн','images/ImageHere.png');
+
+        YakiSoba1=new food('2','1','1YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','1','300 грамм','130 грн','images/ImageHere.png');
+        YakiDoba2=new food('2','2','2YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','2','400 грамм','130 грн','images/ImageHere.png');
+        YakiSoba3=new food('2','3','3YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','3','600 грамм','130 грн','images/ImageHere.png');
+        YakiSoba4=new food('2','4','4YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','4','370 грамм','130 грн','images/ImageHere.png');
+        YakiSoba5=new food('2','5','5YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','5','320 грамм','130 грн','images/ImageHere.png');
+        YakiMoba6=new food('2','6','6YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','1','350 грамм','130 грн','images/ImageHere.png');
+        YakiLoba7=new food('2','7','7YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','3','307 грамм','130 грн','images/ImageHere.png');
+        YakiSoba8=new food('2','8','8YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','2','300 грамм','130 грн','images/ImageHere.png');
+        YakiSoba9=new food('2','9','9YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','3','300 грамм','130 грн','images/ImageHere.png');
+        YakiSoba10=new food('2','10','10YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','4','300 грамм','130 грн','images/ImageHere.png');
+        YakiSoba11=new food('2','11','11YakiSoba','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','5','300 грамм','130 грн','images/ImageHere.png');
+
+        Burger1=new food('3','1','1Burger','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','1','300 грамм','130 грн','images/ImageHere.png');
+
+        Rise1=new food('4','1','1Rise','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','3','300 грамм','130 грн','images/ImageHere.png');
+
+        Lunch1=new food('5','1','1Lunch','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','2','300 грамм','130 грн','images/ImageHere.png');
+
+        Starter1=new food('6','1','1Starter','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','1','300 грамм','130 грн','images/ImageHere.png');
+
+        Drink1=new food('7','1','1Drink','Куриный бульон, Свинина , Твердый тофу, Сухие китайские грибы, Вешенки, Помидоры, Морковь, Яйцо куриное, Зеленый лук, Черный рисовый уксус, Молотый белый перец, Кукурузный крахмал, Кунжутное масло, Соль','0','300 грамм','130 грн','images/ImageHere.png');
+    //закидываем имя созданого продукта в массив(не важно куда)
+        var allfood=new Array(Rise1,Lunch1,Starter1,Drink1,Burger1,Lapsha1,Lapsha2,Lapsha3,Lapsha4,YakiSoba1,YakiDoba2,YakiSoba3,YakiSoba4,YakiSoba5,YakiMoba6,YakiLoba7,YakiSoba8,YakiSoba9,YakiSoba10);
+        var num=1;
+        var choosen;
+        function nextimg() {
+            for(var i=0;i<valplate+1;i++){
+                anime({
+                    targets:'.s'+i,
+                    opacity:'0.6'
+                });
+            }
+            anime({
+                targets:'.s'+num,
+                opacity:'1'
+            });
+            num++;
+            if(num==7){
+                slid(-100);
+            }
+            if(num==12){
+                slid(-200);
+            }
+            if(num==17){
+                slid(-300);
+            }
+            if(num==(valplate+2)){
+                num=1;
+                slid(0);
+                anime({
+                    targets:'.s'+num,
+                    opacity:'1'
+                });
+                nextimg();
+            }
+            for(var j=1;j<=5;j++){
+                document.getElementById('c'+j).style.display='none';
+            }
+            dchange();
+            fade();
+            clearInterval(interval);
+            interval=setInterval("nextimg()",5000);
+        }
+        function previmg() {
+            for(var i=0;i<valplate+1;i++){
+                anime({
+                    targets:'.s'+i,
+                    opacity:'0.6'
+                });
+            }
+            anime({
+                targets:'.s'+(num-2),
+                opacity:'1'
+            });
+            num--;
+            if(num==6){
+                slid(0);
+            }
+            if(num==11){
+                slid(-100);
+            }
+            if(num==16){
+                slid(-200);
+            }
+            if(num==1){
+                num=valplate+1;
+                ((valplate>0)&&(valplate<=5))?slid(0):0;
+                ((valplate>5)&&(valplate<=10))?slid(-100):0;
+                ((valplate>10)&&(valplate<=15))?slid(-200):0;
+                ((valplate>15)&&(valplate<=20))?slid(-300):0;
+                anime({
+                    targets:'.s'+(num-1),
+                    opacity:'1'
+                });
+            }
+            for(var j=1;j<=5;j++){
+                document.getElementById('c'+j).style.display='none';
+            }
+            dchange();
+            fade();
+            clearInterval(interval);
+            interval=setInterval("nextimg()",5000);
+        }
+        var valplate=0;
+        function choose(punkt) {
+            valplate=0;
+            for (var i=0;i<8;i++){
+                anime({
+                    targets:'#p'+i,
+                    easing:'linear',
+                    color: '#ffffff',
+                    duration:0
+                });
+                anime({
+                    targets:'#i'+i,
+                    easing:'linear',
+                    duration:0,
+                    opacity:1
+                });
+            }
+            var punktimg=punkt.id;
+            punktimg='i'+punktimg[1];
+            anime({
+                targets:punkt,
+                easing:'linear',
+                color: '#f5c908',
+                duration: 20,
+            });
+            anime({
+                targets:'#'+punktimg,
+                easing:'linear',
+                duration:0,
+                opacity:0
+            });
+            switch (punktimg) {
+                case 'i1':anime({targets:'#punk',top:'160px'});break;
+                case 'i2':anime({targets:'#punk',top:'270px'});break;
+                case 'i3':anime({targets:'#punk',top:'380px'});break;
+                case 'i4':anime({targets:'#punk',top:'480px'});break;
+                case 'i5':anime({targets:'#punk',top:'590px'});break;
+                case 'i6':anime({targets:'#punk',top:'700px'});break;
+                case 'i7':anime({targets:'#punk',top:'800px'});break;
+            }
+            num=1;
+            choosen=punktimg[1];
+            for(var i=0;i<allfood.length;i++){
+                if(allfood[i].type==choosen){
+                    valplate++;
+                }
+            }
+            for(var i=1;i<20;i++){
+                document.getElementById('s'+i).style.display='none';
+            }
+            for(var i=1;i<valplate+1;i++){
+                document.getElementById('s'+i).style.display='block';
+            }
+            nextimg();
+        }
+        function fade(){
+            document.getElementById('food-name').style.opacity='0';
+            document.getElementById('composition').style.opacity='0';
+            document.getElementById('price').style.opacity='0';
+            document.getElementById('big-img').style.opacity='0';
+            document.getElementById('weight').style.opacity='0';
+            document.getElementById('spicy').style.opacity='0';
+            anime({
+                targets:'#food-name',
+                opacity:'1',
+                easing:'linear',
+                duration:500
+            });
+            anime({
+                targets:'#composition',
+                opacity:'1',
+                easing:'linear',
+                duration:500
+            });
+            anime({
+                targets:'#price',
+                opacity:'1',
+                easing:'linear',
+                duration:500
+            });
+            anime({
+                targets:'#big-img',
+                opacity:'1',
+                easing:'linear',
+                duration:500
+            });
+            anime({
+                targets:'#weight',
+                opacity:'1',
+                easing:'linear',
+                duration:500
+            });
+            anime({
+                targets:'#spicy',
+                opacity:'1',
+                easing:'linear',
+                duration:500
+            });
+        }
+        function slid(sl){
+            anime({
+                targets:'#slider',
+                translateX:sl+'%',
+            });
+        }
+        var ch=0;
+        function menu(){
+            if(ch==0) {
+                anime({
+                    targets: '#m2',
+                    opacity: 0,
+                    duration: 100,
+                    easing: 'easeInOutQuad',
+                });
+                anime({
+                    targets: '#m1',
+                    duration: 300,
+                    easing: 'easeInOutQuad',
+                    rotate: 45,
+                    marginTop: 20,
+                });
+                anime({
+                    targets: '#m3',
+                    duration: 300,
+                    easing: 'easeInOutQuad',
+                    rotate: -45,
+                    marginTop: -14,
+                });
+                anime({
+                    targets: 'menu',
+                    duration: 300,
+                    easing: 'easeInOutQuad',
+                    left: 0
+                });
+                ch=1;
+            }else if(ch==1){
+                anime({
+                    targets: '#m2',
+                    opacity: 1,
+                    duration: 300,
+                    easing: 'easeInOutQuad',
+                });
+                anime({
+                    targets: '#m1',
+                    duration: 300,
+                    easing: 'easeInOutQuad',
+                    rotate: 0,
+                    marginTop: 7,
+                });
+                anime({
+                    targets: '#m3',
+                    duration: 300,
+                    easing: 'easeInOutQuad',
+                    rotate: 0,
+                    marginTop: 7,
+                });
+                anime({
+                    targets: 'menu',
+                    duration: 300,
+                    easing: 'easeInOutQuad',
+                    left: -250
+                });
+                ch=0;
+            }
+        }
+        var interval=setInterval("nextimg()",5000);
+    </script>
+</head>
+<body onload="choose(p2)">
+    <header>
+        <div id="burger" onclick="menu()">
+            <p id="m1"></p>
+            <p id="m2"></p>
+            <p id="m3"></p>
+        </div>
+        <menu>
+            <div id="top-menu">
+                <img id="book-menu" src="images/book.png">
+                <p>МЕНЮ</p>
+            </div>
+            <hr>
+            <div id="bottom-menu">
+                <ul>
+                    <li id="p1" onclick="choose(this)"><img id="i1" src="images/001-noodles.png" alt="">Лапша</li>
+                    <li id="p2" name="p2" onclick="choose(this)"><img id="i2" src="images/002-soup.png" alt="">Супы</li>
+                    <li id="p3" onclick="choose(this)"><img id="i3" src="images/003-hamburger.png" alt="">Бургеры</li>
+                    <li id="p4" onclick="choose(this)"><img id="i4" src="images/004-rice.png" alt="">Рис</li>
+                    <li id="p5" onclick="choose(this)"><img id="i5" src="images/005-scrambled-eggs.png" alt="">Закуски</li>
+                    <li id="p6" onclick="choose(this)"><img id="i6" src="images/006-sandwich.png" alt="">Стартеры</li>
+                    <li id="p7" onclick="choose(this)"><img id="i7" src="images/007-cocktails.png" alt="">Напитки</li>
+                </ul>
+            </div>
+            <div id="punk"><img width="25px" height="25px" src="images/punkt.png" alt=""></div>
+        </menu>
+        <main>
+            <logo>
+                <img src="images/UmamiYummy_logo.png" alt="">
+            </logo>
+            <div id="buy">
+                <p id="food-name"></p>
+                <p id="composition"></p>
+                <div id="spicy">
+                    <img class="chili" id="c1" src="images/chili.png">
+                    <img class="chili" id="c2" src="images/chili.png">
+                    <img class="chili" id="c3" src="images/chili.png">
+                    <img class="chili" id="c4" src="images/chili.png">
+                    <img class="chili" id="c5" src="images/chili.png">
+                </div>
+                <p id="weight"></p>
+                <p id="price"></p>
+                <a id="in-cart">В КОРЗИНУ</a>
+                <nav>
+                    <img class="left" onclick="previmg()" src="images/left.png">
+                    <div id="wrapper">
+                        <div id="slider">
+                            <img class="slid s1" id='s1' onclick="num=1;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s2" id="s2" onclick="num=2;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s3" id="s3" onclick="num=3;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s4" id="s4" onclick="num=4;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s5" id="s5" onclick="num=5;nextimg();" src="images/slider.png" alt="">
+
+                            <img class="slid s6" id="s6" onclick="num=6;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s7" id="s7" onclick="num=7;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s8" id="s8" onclick="num=8;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s9" id="s9" onclick="num=9;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s10" id="s10" onclick="num=10;nextimg();" src="images/slider.png" alt="">
+
+                            <img class="slid s11" id="s11" onclick="num=11;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s12" id="s12" onclick="num=12;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s13" id="s13" onclick="num=13;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s14" id="s14" onclick="num=14;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s15" id="s15" onclick="num=15;nextimg();" src="images/slider.png" alt="">
+
+                            <img class="slid s16" id="s16" onclick="num=16;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s17" id="s17" onclick="num=17;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s18" id="s18" onclick="num=18;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s19" id="s19" onclick="num=19;nextimg();" src="images/slider.png" alt="">
+                            <img class="slid s20" id="s20" onclick="num=20;nextimg();" src="images/slider.png" alt="">
+                        </div>
+                    </div>
+                    <img class="right" onclick="nextimg()" src="images/right.png">
+                </nav>
+            </div>
+
+            <div id="info">
+                <ul>
+                    <li><a href="#" id="lang" onclick="mlang()">RU</a><br><a id="ua" href="" style="border-bottom: 1px solid white">UA</a><a id="en" href="">EN</a></li>
+                    <li id="wt"><a href="tel:+38 (095) 52-232-10"><img src="images/telephone.png"></a></li>
+                    <li id="bt"><a href="tel:+38 (095) 52-232-10"><img src="images/telephoneb.png"></a></li>
+                    <li><a href="tel:+38 (095) 52-232-10">+38 (095) 52-232-10</a></li>
+                </ul>
+            </div>
+            <img id="big-img" src="">
+        </main>
+    </header>
+    <article1>
+        <div class="free-del"><h1>Бесплатная доставка</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua.  Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p></div>
+        <div class="free-del"><h1>Бесплатная доставка по центру Киева</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra.</p></div>
+        <p><img src="images/Moped.png" alt=""></p>
+
+    </article1>
+
+    <article2>
+        <ul>
+            <li class="free-del payment"><h1>Удобный тип оплаты</h1><p>Оплата картой или наличными курьеру
+                после доставки</p></li>
+            <li ><img src="images/credit-card%20(2).png" alt=""></li>
+        </ul>
+        <br>
+        <ul>
+            <li ><img id="man" src="images/s1200.png" alt=""></li>
+            <li class="free-del fast"><h1>Быстро и вкусно</h1><p>Еда готовится исключительно в нашем
+                ресторане и всегда свежая и вкусная.</p></li>
+        </ul>
+    </article2>
+    <article3>
+        <h1 class="need">Это обязательно стоит попробовать</h1><br><br>
+            <ul>
+            <li class="down aline"><img src="images/grid1.png" alt="">
+                <p>СУПЫ</p></li>
+            <li class="down bline"><img src="images/grid2.png" alt="">
+                <p>ЛАПША</p></li>
+            <li class="down cline"><img src="images/grid3.png" alt="">
+                <p>БУРГЕРЫ</p></li>
+            </ul>
+            <ul>
+            <li class="down dline"><img src="images/grid4.png" alt="">
+                <p>РИС</p></li>
+            <li class="down eline"><img src="images/grid5.png" alt="">
+                <p>КОРН-ДОГ</p></li>
+            <li class="down fline"><img src="images/grid6.png" alt="">
+                <p>СПРИНГ-РОЛЛЫ</p></li>
+            <li class="down gline"><img src="images/grid7.png" alt="">
+                <p>НАПИТКИ</p></li>
+            </ul>
+    </article3>
+    <article4>
+        <p id="invite">Пригласи друга<br> и получи подарок<br> от нас</p>
+    </article4>
+    <footer>
+        <ul id="main-ul">
+            <li class="block-foot">
+                <ul id="mission-ul">
+                    <p>Доставка и оплата</p>
+                    <li class="mission"><a href="">Миссия Umami Yummy</a></li>
+                    <li class="mission"><a href="">Наши новости</a></li>
+                    <li class="mission"><a href="">Бонусная программа</a></li>
+                    <li class="mission"><a href="">Карта доставки</a></li>
+                    <li class="mission"><a href="">Политика конфиденциальности</a></li>
+                </ul>
+            </li>
+            <li class="block-foot">
+                <ul id="social-ul">
+                    <hr>
+                    <p>Мы в соц сетях</p>
+                    <li><a href=""><img src="images/youtube.png" alt=""></a><a href=""><img src="images/004-telegram.png" alt=""></a></li>
+                    <li><a href=""><img src="images/002-instagram.png" alt=""></a><a href=""><img src="images/001-facebook-logo.png" alt=""></a></li>
+                    <hr>
+                </ul>
+            </li>
+            <li class="block-foot">
+                <ul id="money-ul">
+                    <li class="money">Мы принимаем</li>
+                    <li class="money">Наличные <img class="money-img" src="images/money.png" alt=""></li>
+                    <li class="money">MasterCard <img class="money-img" src="images/mastercard-clip-art-png-clip-art.png" alt=""></li>
+                    <li class="money">Visa <img class="money-img" src="images/kisspng-visa-mastercard-credit-card-bank-business-italy-visa-5b2392c0f22411.9820124515290579849918.png" alt=""></li>
+                    <li class="money">Оплата онлайн <img class="money-img" src="images/bank.png" alt=""></li>
+                </ul>
+            </li>
+        </ul>
+    </footer>
+    <script type="text/javascript">
+        var plate;
+        function getplate() {
+            plate=num-1;
+        }
+        function dchange() {
+            getplate();
+            for(var i=0;i<allfood.length;i++){
+                if((allfood[i].plate==plate)&&(allfood[i].type==choosen)){
+                    document.getElementById('food-name').innerHTML=allfood[i].foodname;
+                    document.getElementById('composition').innerHTML=allfood[i].composition;
+                    document.getElementById('weight').innerHTML=allfood[i].weight;
+                    document.getElementById('price').innerHTML=allfood[i].price;
+                    document.getElementById('big-img').src=allfood[i].img;
+                        for(var j=1;j<=allfood[i].spicy;j++){
+                            document.getElementById('c'+j).style.display='block';
+                        }
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
